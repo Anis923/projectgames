@@ -1,0 +1,41 @@
+{% extends 'store/base.html' %}
+{% load custom_filters %}  {# Load your custom multiply filter #}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<h2>Profile</h2>
+<p><strong>Username:</strong> {{ user.username }}</p>
+
+<h3 class="mt-4">Order History</h3>
+{% if orders %}
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Order ID</th>
+      <th>Date</th>
+      <th>Product</th>
+      <th>Quantity</th>
+      <th>Total (₹)</th>
+      <th>Shipping Address</th>
+      <th>Phone</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for order in orders %}
+    <tr>
+      <td>{{ order.id }}</td>
+      <td>{{ order.ordered_at|date:"SHORT_DATE_FORMAT" }}</td>
+      <td>{{ order.product.name }}</td>
+      <td>{{ order.quantity }}</td>
+      <td>{{ order.quantity|multiply:order.product.price }}</td>
+      <td>{{ order.address }}</td>
+      <td>{{ order.phone }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<p>No orders found.</p>
+{% endif %}
+{% endblock %}

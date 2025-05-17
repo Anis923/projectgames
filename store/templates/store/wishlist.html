@@ -1,0 +1,44 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Wishlist{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+  <h2 class="mb-4">Your Wishlist</h2>
+  {% if wishlist_items %}
+  <table class="table table-bordered align-middle">
+    <thead class="table-light">
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th class="text-center">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in wishlist_items %}
+      <tr>
+        <td>{{ item.product.name }}</td>
+        <td>₹{{ item.product.price }}</td>
+        <td class="text-center">
+          <div style="display: inline-block;">
+            <a href="{% url 'add_to_cart_from_wishlist' item.product.id %}"
+               class="btn btn-success btn-sm me-2"
+               style="min-width: 120px; display: inline-block; width: auto; white-space: nowrap;">
+               Add to Cart
+            </a>
+            <a href="{% url 'remove_from_wishlist' item.product.id %}"
+               class="btn btn-danger btn-sm"
+               style="min-width: 120px; display: inline-block; width: auto; white-space: nowrap;">
+               Remove
+            </a>
+          </div>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Your wishlist is empty.</p>
+  {% endif %}
+</div>
+{% endblock %}

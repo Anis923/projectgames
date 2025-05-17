@@ -1,0 +1,46 @@
+{% extends 'store/base.html' %}
+{% load custom_filters %}  {# Load your custom multiply filter #}
+
+{% block title %}User Purchase History{% endblock %}
+
+{% block content %}
+<h2>User Purchase History</h2>
+
+{% if users %}
+  {% for user in users %}
+    <h4>{{ user.username }} ({{ user.email }})</h4>
+    {% if user.orders.all %}
+      <table class="table table-bordered mb-4">
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Ordered At</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Total (₹)</th>  {# New Total Price Column #}
+          </tr>
+        </thead>
+        <tbody>
+          {% for order in user.orders.all %}
+          <tr>
+            <td>{{ order.id }}</td>
+            <td>{{ order.product.name }}</td>
+            <td>{{ order.quantity }}</td>
+            <td>{{ order.ordered_at|date:"SHORT_DATE_FORMAT" }}</td>
+            <td>{{ order.address }}</td>
+            <td>{{ order.phone }}</td>
+            <td>{{ order.quantity|multiply:order.product.price }}</td>  {# Calculated Total #}
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    {% else %}
+      <p><em>No orders found for this user.</em></p>
+    {% endif %}
+  {% endfor %}
+{% else %}
+  <p>No users found.</p>
+{% endif %}
+{% endblock %}

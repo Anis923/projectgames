@@ -1,0 +1,68 @@
+{% extends 'store/base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+{% block content %}
+<!-- Hero Section -->
+<div class="text-center center-container">
+  <h1>Welcome to GameStore!</h1>
+  <p class="lead">Browse and buy your favorite games, consoles, and accessories.</p>
+  <a href="{% url 'products' %}" class="btn btn-primary">Shop Now</a>
+</div>
+
+<!-- About Us Section -->
+<div class="container my-5 about-us-section">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <img src="{% static 'images/about-us.jpg' %}" alt="About Us Image" class="img-fluid rounded" />
+    </div>
+    <div class="col-md-6">
+      <h2>About Us</h2>
+      <p>Welcome to GameStore, your one-stop shop for the latest and greatest in gaming. 
+         We offer a wide selection of games, consoles, and accessories to suit every gamer’s needs. 
+         Our mission is to bring joy and excitement to gamers worldwide.</p>
+      <p>Whether you’re a casual player or a hardcore enthusiast, we provide top-quality products and excellent customer service.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Why Choose Us Section -->
+<div class="container my-5">
+  <div class="text-center mb-4">
+    <h2>Why Choose Us</h2>
+  </div>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="feature-box text-center">
+        <div class="feature-icon"><i class="fas fa-gem"></i></div>
+        <h4>Top Quality</h4>
+        <p>All products are quality-tested and handpicked by our experts for peak performance.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-box text-center">
+        <div class="feature-icon"><i class="fas fa-gamepad"></i></div>
+        <h4>Exclusive Deals</h4>
+        <p>Enjoy regular discounts and limited edition products only at GameStore.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-box text-center">
+        <div class="feature-icon"><i class="fas fa-shipping-fast"></i></div>
+        <h4>Fast Delivery</h4>
+        <p>We guarantee fast, safe, and reliable delivery across India.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer style="background-color: black; color: white; padding: 20px 0; text-align: center; margin-top: 40px;">
+  <div class="container">
+    <p class="mb-0">&copy; 2025 YourSiteName. All rights reserved.</p>
+  </div>
+</footer>
+{% endblock %}

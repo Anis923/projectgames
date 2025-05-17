@@ -1,0 +1,50 @@
+{% extends 'store/base.html' %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Checkout</h2>
+
+<div class="row">
+  <!-- Cart Summary -->
+  <div class="col-md-6">
+    <h4>Your Cart</h4>
+    {% if cart_items %}
+      <ul class="list-group mb-3">
+        {% for item in cart_items %}
+          <li class="list-group-item d-flex justify-content-between align-items-center">
+            {{ item.product.name }} x {{ item.quantity }}
+            <span>₹{{ item.get_total_price }}</span>
+          </li>
+        {% endfor %}
+        <li class="list-group-item d-flex justify-content-between align-items-center fw-bold">
+          Total
+          <span>₹{{ total_price }}</span>
+        </li>
+      </ul>
+    {% else %}
+      <p>Your cart is empty.</p>
+    {% endif %}
+  </div>
+
+  <!-- Checkout Form -->
+  <div class="col-md-6">
+    <h4>Shipping Details</h4>
+    <form method="post" novalidate>
+      {% csrf_token %}
+      {% for field in form %}
+        <div class="mb-3">
+          {{ field.label_tag }} 
+          {{ field }}
+          {% if field.errors %}
+            <div class="text-danger small">
+              {{ field.errors|striptags }}
+            </div>
+          {% endif %}
+        </div>
+      {% endfor %}
+      <button type="submit" class="btn btn-success">Place Order</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
