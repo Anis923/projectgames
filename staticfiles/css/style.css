@@ -1,0 +1,390 @@
+/* Navbar */
+.navbar {
+  background-color: black;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 15px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: red;
+  cursor: pointer;
+}
+
+/* Body Background (white site background) */
+body {
+  background-color: #ffffff;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hero Section */
+.center-container {
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../images/hero3.jpg') center center / cover no-repeat;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  padding: 20px;
+  text-align: center;
+}
+
+/* About Us Section */
+.about-us-section {
+  background-color: #f8f9fa;
+  padding: 40px 20px;
+  border-radius: 10px;
+}
+
+/* Why Choose Us Section */
+.feature-box {
+  background-color: #f1f1f1;
+  padding: 30px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.feature-icon {
+  font-size: 40px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+/* Footer (if you're keeping the AR Icecreams-style footer) */
+.footer {
+  background-color: #222;
+  color: #ccc;
+  padding: 40px 0;
+  margin-top: 50px;
+}
+
+.footer h5 {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.footer a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  color: #fff;
+}
+
+.footer .social-icons a {
+  margin-right: 10px;
+  color: #ccc;
+  font-size: 20px;
+}
+
+.footer .social-icons a:hover {
+  color: #fff;
+}
+
+/* Center the form container vertically and add padding */
+.justify-content-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style the form container */
+.col-md-5 {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style the heading */
+h2 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Style form inputs */
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: 500;
+    color: #495057;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #dc3545; /* Changed to red to match button/link */
+    outline: none;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+}
+
+/* Style the submit button (changed to red) */
+.btn-success {
+    background-color: #dc3545; /* Red color */
+    border-color: #dc3545;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #c82333; /* Darker red on hover */
+    border-color: #c82333;
+}
+
+/* Style the login link (changed to red) */
+.mt-3 a {
+    color: #dc3545; /* Red color */
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.mt-3 a:hover {
+    color: #c82333; /* Darker red on hover */
+    text-decoration: underline;
+}
+
+/* Add spacing for form errors */
+form .errorlist {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+/* Center the form container with margin and padding */
+.login-container {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+/* Style the heading */
+.login-title {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+/* Style form labels */
+.login-form label {
+    font-weight: 500;
+    color: #495057;
+}
+
+/* Style form inputs */
+.login-form input {
+    width: 100%;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+/* Input focus effect (changed to red) */
+.login-form input:focus {
+    border-color: #dc3545;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(220, 53, 69, 0.25);
+}
+
+/* Style the login button (changed to red) */
+.login-btn {
+    width: 100%;
+    padding: 0.75rem;
+    font-weight: 500;
+    background-color: #dc3545;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Button hover effect (darker red) */
+.login-btn:hover {
+    background-color: #c82333;
+}
+
+/* Style the signup link container */
+.signup-link {
+    text-align: center;
+    margin-top: 1rem;
+    color: #6c757d;
+}
+
+/* Style the signup link (changed to red) */
+.signup-link a {
+    color: #dc3545;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+/* Signup link hover effect (darker red) */
+.signup-link a:hover {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+/* Style error messages */
+.error-message {
+    color: #dc3545;
+    margin-bottom: 1rem;
+}
+/* Center the form container with margin and padding */
+.justify-content-center {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Style the form container (updated to match login-container) */
+.col-md-5 {
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff; /* Changed to white to match login */
+}
+
+/* Style the heading */
+h2 {
+    color: #343a40;
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* Style form inputs */
+form .form-group {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-weight: 500;
+    color: #495057;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"] {
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    padding: 10px;
+    width: 100%;
+    transition: border-color 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus {
+    border-color: #dc3545;
+    outline: none;
+    box-shadow: 0 0 5px rgba(220, 53, 69, 0.3);
+}
+
+/* Style the submit button */
+.btn-success {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-success:hover {
+    background-color: #c82333;
+    border-color: #c82333;
+}
+
+/* Style the login link */
+.mt-3 a {
+    color: #dc3545;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.mt-3 a:hover {
+    color: #c82333;
+    text-decoration: underline;
+}
+
+/* Add spacing for form errors */
+form .errorlist {
+    color: #dc3545;
+    font-size: 14px;
+    margin-bottom: 10px;
+    list-style: none;
+    padding: 0;
+}
+/* Admin View: Product images in table */
+.table .img-fluid {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* User View: Product images in cards */
+.card-img-top {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix dropdown item color in Products menu */
+.navbar .dropdown-menu .dropdown-item {
+  color: white !important; /* Default text color */
+  background-color: black !important; /* Matches navbar background */
+}
+
+/* On hover - make text red */
+.navbar .dropdown-menu .dropdown-item:hover {
+  color: red !important;
+  background-color: #111 !important; /* Optional darker hover background */
+}
